@@ -1,0 +1,247 @@
+/*
+ * ========================================
+ * 1. REINICIO Y ESTILOS GLOBALES
+ * ========================================
+ */
+
+/* Aplica una fuente limpia a todos los elementos y elimina el margen predeterminado */
+* {
+    /* Mantiene los estilos definidos previamente para la fuente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/*
+ * ========================================
+ * REGLAS SOLICITADAS POR EL USUARIO
+ * ========================================
+ */
+
+/* Selector para etiqueta descendiente <p> dentro de la etiqueta <footer>
+ * Alinea el texto a la derecha y en itálica (cursiva).
+ */
+footer p {
+    /* Alineación de texto a la derecha */
+    text-align: right;
+    
+    /* Estilo de fuente en itálica (cursiva) */
+    font-style: italic;
+}
+
+/* Selector para la etiqueta hija inmediata <ul> dentro de la etiqueta <nav>
+ * Elimina las viñetas predeterminadas de la lista.
+ */
+nav > ul {
+    /* Elimina el estilo de viñeta (punto, cuadrado, etc.) */
+    list-style: none;
+}
+
+section {
+
+    /* borde de grosor 0.2 en puntos, estilo sólido y color hexadecimal #cedddd  */
+    border: 0.2pt solid #cedddd;
+
+    /* margen (espacio externo) superior, derecho, abajo e izquierda */
+    margin: 4px 2px 8px 2px;
+
+    /* relleno (espacio interno) de
+    1.5% en la parte superior e inferior y
+    0.8% a los lados derecho e izquierdo. */
+
+    padding: 1.5% 0.8%;
+
+    /* Margen inferior ajustado */
+    margin-bottom: 1.2rem;
+
+}
+/*
+ * ========================================
+ * EL RESTO DE TU CSS CONTINUARÍA AQUÍ
+ * ========================================
+ */
+
+/* Estilos para el cuerpo del documento */
+body {
+    background-color: #f4f4f9; 
+    color: #333; 
+    line-height: 1.6; 
+    padding: 20px;
+}
+
+/* Contenedor principal para centrar el CV y darle un ancho máximo */
+.cv-container {
+    max-width: 900px; 
+    margin: 40px auto; 
+    background-color: #ffffff; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    padding: 30px;
+}
+
+/*
+ * ========================================
+ * 1.5 ESPACIO PARA FOTO DE PERFIL
+ * ========================================
+ */
+
+.profile-photo {
+    /* Dimensiones del cuadro */
+    width: 150px;
+    height: 150px;
+    /* Estilo visual */
+    background-color: #ccc; /* Fondo gris claro */
+    border: 3px solid #3498db; /* Borde azul para resaltarlo */
+    border-radius: 50%; /* Lo hace circular */
+    
+    /* Centrado y Margen */
+    margin: 0 auto 20px auto; /* Centra el bloque y añade margen debajo */
+    
+    /* Texto de referencia */
+    text-align: center;
+    line-height: 150px; /* Centra el texto verticalmente */
+    color: #555;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    /* Para que el texto no se rompa */
+    white-space: nowrap; 
+    overflow: hidden;
+}
+
+/*
+ * ========================================
+ * 2. TIPOGRAFÍA Y ENCABEZADOS
+ * ========================================
+ */
+.document-title {
+    /* 💡 Nueva línea: Aplica la fuente "BBH Sans Bogle" */
+    font-family: "BBH Sans Bogle", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    text-align: center; 
+    font-size: 1.5em;    
+    color: #34495e;    
+    margin-bottom: 5px;  
+    font-weight: 300;    
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+}
+/* Título principal (Tu Nombre) - Centrado y Negrita */
+h1 {
+    /* 💡 Nueva línea: Aplica la fuente "BBH Sans Bogle" */
+    font-family: "BBH Sans Bogle", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Estilos previamente definidos */
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50; 
+    font-size: 2.5em; 
+    margin-bottom: 5px;
+}
+
+/* El selector universal * queda sin BBH Sans Bogle, usando solo las fuentes de respaldo: */
+* {
+    /* Familia de fuentes */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+/* Subtítulo (Tu Profesión/Puesto Deseado) */
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+/* Títulos de sección (Ej: Experiencia, Educación) */
+h2 {
+    color: #34495e; 
+    font-size: 1.5em;
+    border-bottom: 2px solid #3498db; 
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/*
+ * ========================================
+ * 3. SECCIONES Y CONTENIDO
+ * ========================================
+ */
+
+/* Bloques de experiencia y educación */
+.section-item {
+    margin-bottom: 20px;
+}
+
+/* Título de Puesto/Grado */
+.item-title {
+    font-weight: bold;
+    color: #2c3e50;
+    display: block; 
+}
+
+/* Nombre de Empresa/Institución y Fechas */
+.item-subtitle, .item-date {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Puntos de lista (Logros, Responsabilidades) */
+ul {
+    list-style: disc; 
+    margin-left: 20px;
+    padding-left: 5px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/*
+ * ========================================
+ * 4. INFORMACIÓN DE CONTACTO Y HABILIDADES
+ * ========================================
+ */
+
+/* Contacto e Información personal */
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #bdc3c7; 
+}
+
+.contact-info a {
+    color: #3498db; 
+    text-decoration: none; 
+    margin: 0 10px;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Lista de Habilidades (Ejemplo de formato en línea) */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+}
+
+.skills-list li {
+    display: inline-block; 
+    background-color: #ecf0f1; 
+    color: #333;
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px; 
+    font-size: 0.9em;
+}

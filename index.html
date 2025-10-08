@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Currículum Vitae</title>
+  <title>Curriculum Vitae</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
+    <p class="document-title">CURRÍCULUM VITAE</p> 
+    <div class="profile-photo">FOTO DE PERFIL</div>
+        <nav>
     <ul>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#experiencia">Experiencia</a></li>
@@ -142,61 +147,61 @@
     <section id="contacto">
     <h2>Contacto</h2>
     
-    <form action="/submit-contact" method="post">
-        
-        <div>
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre_contacto" required>
-        </div>
+    <form action="/submit-contact" method="post">
+        
+        <div>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre_contacto" required>
+        </div>
 
-        <div>
-            <label for="motivo">Motivo de Contacto:</label>
-            <select id="motivo" name="motivo_contacto">
-                <option value="consulta">Consulta General</option>
-                <option value="oferta">Oferta de Trabajo</option>
-                <option value="proyecto">Propuesta de Proyecto</option>
-            </select>
-        </div>
-        
-        <fieldset>
-            <legend>¿Cómo prefiere que le contactemos?</legend>
-            <div>
-                <input type="radio" id="email_pref" name="preferencia_contacto" value="email" required>
-                <label for="email_pref">Email</label>
-            </div>
-            <div>
-                <input type="radio" id="telefono_pref" name="preferencia_contacto" value="telefono">
-                <label for="telefono_pref">Teléfono</label>
-            </div>
-        </fieldset>
+        <div>
+            <label for="motivo">Motivo de Contacto:</label>
+            <select id="motivo" name="motivo_contacto">
+                <option value="consulta">Consulta General</option>
+                <option value="oferta">Oferta de Trabajo</option>
+                <option value="proyecto">Propuesta de Proyecto</option>
+            </select>
+        </div>
+        
+        <fieldset>
+            <legend>¿Cómo prefiere que le contactemos?</legend>
+            <div>
+                <input type="radio" id="email_pref" name="preferencia_contacto" value="email" required>
+                <label for="email_pref">Email</label>
+            </div>
+            <div>
+                <input type="radio" id="telefono_pref" name="preferencia_contacto" value="telefono">
+                <label for="telefono_pref">Teléfono</label>
+            </div>
+        </fieldset>
 
-        <fieldset>
-            <legend>Áreas de Interés (Selección Múltiple):</legend>
-            <div>
-                <input type="checkbox" id="frontend" name="intereses" value="frontend">
-                <label for="frontend">Desarrollo Frontend</label>
-            </div>
-            <div>
-                <input type="checkbox" id="backend" name="intereses" value="backend">
-                <label for="backend">Desarrollo Backend</label>
-            </div>
-            <div>
-                <input type="checkbox" id="ux" name="intereses" value="ux">
-                <label for="ux">Diseño UX/UI</label>
-            </div>
-        </fieldset>
+        <fieldset>
+            <legend>Áreas de Interés (Selección Múltiple):</legend>
+            <div>
+                <input type="checkbox" id="frontend" name="intereses" value="frontend">
+                <label for="frontend">Desarrollo Frontend</label>
+            </div>
+            <div>
+                <input type="checkbox" id="backend" name="intereses" value="backend">
+                <label for="backend">Desarrollo Backend</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ux" name="intereses" value="ux">
+                <label for="ux">Diseño UX/UI</label>
+            </div>
+        </fieldset>
 
-        <div>
-            <label for="mensaje">Su Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-        </div>
+        <div>
+            <label for="mensaje">Su Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
 
-        <div>
-            <button type="submit">Enviar Formulario de Contacto</button>
-        </div>
+        <div>
+            <button type="submit">Enviar Formulario de Contacto</button>
+        </div>
 
-    </form>
-      </section>
+    </form>
+      </section>
 
 </body>
 </html>
