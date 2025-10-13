@@ -6,46 +6,74 @@
 }
 
 body {
-    background-color: #f4f4f9;
+    background: linear-gradient(135deg, #C9F0FF 0%, #EAFFFD 100%);
     color: #333;
     line-height: 1.6;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .cv-container {
     max-width: 900px;
     margin: 40px auto;
     background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.cv-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #3498db;
+    border-radius: 12px 12px 0 0;
 }
 
 .document-title {
     font-family: "BBH Sans Bogle", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    font-size: 1.5em;
-    color: #34495e;
-    margin-bottom: 5px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
     text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.document-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
-    background-color: #ccc;
-    border: 3px solid #3498db;
+    width: 160px;
+    height: 160px;
+    border: 5px solid #3498db;
     border-radius: 50%;
-    margin: 0 auto 20px auto;
-    text-align: center;
-    line-height: 150px;
-    color: #555;
-    font-size: 0.9em;
-    font-weight: bold;
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
+    display: block;
+    margin: 20px auto 25px auto;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.5);
 }
 
 nav > ul {
@@ -53,14 +81,37 @@ nav > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin: 15px 0;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px 0;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    border-radius: 8px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #3498db;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 80%;
 }
 
 h1 {
@@ -80,19 +131,61 @@ h1 {
 }
 
 h2 {
+    color: #2c3e50;
+    font-size: 1.6em;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 18px;
+    position: relative;
+    padding-left: 15px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 70%;
+    background: linear-gradient(180deg, #3498db, #2ecc71);
+    border-radius: 3px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+h4 {
     color: #34495e;
-    font-size: 1.5em;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
+    font-size: 1.1em;
     margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid #3498db;
 }
 
 section {
-    border: 0.2pt solid #cedddd;
-    margin: 4px 2px 8px 2px;
-    padding: 1.5% 0.8%;
-    margin-bottom: 1.2rem;
+    border: none;
+    margin: 8px 0 20px 0;
+    padding: 25px 20px;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .section-item {
@@ -114,13 +207,29 @@ section {
 }
 
 ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding-left: 5px;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 ul li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.8;
+}
+
+ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ul li strong {
+    color: #2c3e50;
 }
 
 footer p {
@@ -153,10 +262,179 @@ footer p {
 
 .skills-list li {
     display: inline-block;
-    background-color: #ecf0f1;
-    color: #333;
-    padding: 5px 10px;
+    background: #C9F0FF;
+    color: #2c3e50;
+    padding: 8px 16px;
     margin: 5px 5px 5px 0;
-    border-radius: 3px;
+    border-radius: 20px;
     font-size: 0.9em;
+    font-weight: 500;
+    border: 2px solid #3498db;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+blockquote {
+    margin: 15px 0;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    font-style: italic;
+    color: #555;
+    border-radius: 4px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article p {
+    margin-top: 10px;
+    color: #7f8c8d;
+    font-size: 0.95em;
+}
+
+iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}
+
+figure {
+    margin: 20px 0 !important;
+}
+
+figure img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-size: 0.9em !important;
+    color: #666 !important;
+    margin-top: 8px !important;
+    text-align: center;
+}
+
+form {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+form > div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+fieldset {
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+fieldset > div {
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background: #3498db;
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+button[type="submit"]:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+    margin: 25px 0;
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        padding: 25px;
+        margin: 20px auto;
+    }
+    
+    .document-title {
+        font-size: 1.4em;
+        letter-spacing: 2px;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    nav > ul {
+        gap: 8px;
+    }
+    
+    nav ul li a {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
 }
